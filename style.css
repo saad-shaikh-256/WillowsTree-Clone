@@ -1,0 +1,175 @@
+/* Font Faces */
+@font-face {
+   font-family: 'AvenirNextLTPro-Bold';
+   src: url('Fonts/AvenirNextLTPro-Bold.otf')
+}
+
+@font-face {
+   font-family: 'AvenirNextLTPro-Demi';
+   src: url('Fonts/AvenirNextLTPro-Demi.otf')
+}
+
+@font-face {
+   font-family: 'AvenirNextLTPro-Regular';
+   src: url('Fonts/AvenirNextLTPro-Regular.otf')
+}
+
+:root {
+   --primary-color: #1abba9;
+   --white-color: #ffffff;
+   --black-color: #0b0c0c;
+
+   /* Fonts */
+   --Font-Regular: 'AvenirNextLTPro-Regular';
+   --Font-SemiBold: 'AvenirNextLTPro-Demi';
+   --Font-Bold: 'AvenirNextLTPro-Bold';
+}
+
+* {
+   margin: 0;
+   padding: 0;
+   scroll-behavior: smooth;
+   box-sizing: border-box;
+   transition: .5s;
+   overflow-wrap: break-word;
+}
+
+html,
+body {
+   background-color: var(--black-color);
+   color: var(--white-color);
+   overflow-x: hidden;
+   width: 100dvw;
+   height: 100dvh;
+   font-family: 'AvenirNextLTPro Regular', 'Poppins', sans-serif;
+   scroll-behavior: smooth;
+   overscroll-behavior: none;
+}
+
+nav {
+   width: 100%;
+   height: fit-content;
+   background-color: var(--black-color);
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   color: var(--white-color);
+   padding: 2dvh;
+   position: fixed;
+   top: 0;
+
+   #logo {
+      height: fit-content;
+      width: fit-content;
+   }
+
+   #logo img {
+      width: 50%;
+      height: auto;
+   }
+
+   #links {
+      width: 90%;
+      height: fit-content;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: end;
+      gap: 4dvh;
+   }
+
+   #linksDropdown #linkWithImg {
+      width: fit-content;
+      height: fit-content;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 1dvh;
+      cursor: pointer;
+   }
+
+   #linksDropdown .dropdown {
+      display: none;
+
+      a {
+         font-family: var(--Font-Regular);
+         font-size: 1rem;
+         color: var(--black-color);
+      }
+   }
+
+   #linksDropdown:hover .dropdown {
+      margin-top: 1rem;
+      display: block;
+      width: fit-content;
+      height: fit-content;
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 1dvh;
+      cursor: pointer;
+      background-color: var(--white-color);
+      padding: 1rem 1.2rem;
+   }
+
+   #linksDropdown img {
+      width: 24px;
+      height: 24px;
+      rotate: 90deg;
+   }
+
+   #linksDropdown:hover img {
+      rotate: -90deg;
+   }
+
+   #links a {
+      all: unset;
+      cursor: pointer;
+      color: var(--white-color);
+      font-size: 1.30rem;
+      font-family: var(--Font-SemiBold);
+
+      &:hover {
+         color: var(--primary-color);
+         transition: 0.5s;
+      }
+   }
+
+   #search {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-bottom: 2px solid var(--white-color);
+
+      &:hover {
+         cursor: pointer;
+         border-bottom: 2px solid var(--primary-color);
+      }
+
+      input {
+         width: 12.5dvw;
+         height: 4dvh;
+         padding: 0 10px;
+         font-size: 1rem;
+         border: none;
+         border-radius: 5px;
+         background-color: var(--black-color);
+         color: var(--white-color);
+         outline: none;
+         transition: 0.5s;
+
+      }
+
+      button {
+         all: unset;
+         cursor: pointer;
+         background-color: var(--black-color);
+      }
+   }
+}
